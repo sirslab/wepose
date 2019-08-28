@@ -48,7 +48,7 @@ public:
 	};
 
 
-	void insert(acquisition newAcquisition) {
+	void insert(acquisition &newAcquisition) {
 		if (this->size() < mySize)
 		{
 			this->push_back(newAcquisition);
