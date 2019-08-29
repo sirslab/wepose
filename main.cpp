@@ -41,13 +41,14 @@
 //  GLUT
 // ----------------------------------------------------------
 #define GUI
-// CAMBIA ANCHE LE DEFINIZIONI DI GLUT!!!!!!
+
+// Visualization options
 bool rectangles = true;
 bool g_b_2DStickman = false;
 bool g_b_3DStickman = false;
 
 
-//Prototipi delle funzioni GLUT
+// Glut functions
 void display();
 void specialKeys(int key, int x, int y);
 void glutIdle(void);
@@ -57,7 +58,7 @@ void initGL();
 void renderBitmapString(float x, float y, float z, void *font, char *string);
 void cleanExit();
 
-// Variabili Globali GLUT
+// Glut variables
 double rotate_y = 0;
 double rotate_x = 0;
 
@@ -68,6 +69,8 @@ bool *g_b_calibration = NULL;
 bool *g_b_calibrated = NULL;
 
 bool g_b_startGUI = false;
+
+
 // ----------------------------------------------------------
 //  IMU
 // ----------------------------------------------------------
@@ -108,13 +111,11 @@ void readIMU(DeviceClass*, XsPortInfo*, int, double*);
 std::thread* t; // each imu will have a sapate thread
 std::thread readViconThread; // thread to read Vicon stream
 
-int valuesToSave = 9; // Se tutto: 136;
+int valuesToSave = 9; // all values -> 136;
 
 
 int avviaTutto() {
 
-	//DeviceClass device;
-	//std::vector <DeviceClass*> deviceArray;
 	DeviceClass* deviceArray;
 	double** viconQuaternion = NULL;
 
@@ -155,16 +156,12 @@ int avviaTutto() {
 #endif
 				std::cin >> portName;
 				string porteCom[3];
-				porteCom[0] = "COM5";
-				porteCom[1] = "COM9";
-				porteCom[2] = "COM6";
 
-				//portName = porteCom[iDev];
+
 				std::cout << portName << std::endl;
 
 				std::cout << "Please enter baud rate (eg. 115200.). HR works only with 2000000: ";
 				std::cin >> baudRate;
-				///baudRate = 2000000;
 				std::cout << baudRate << std::endl;;
 
 				XsPortInfo portInfo(portName, XsBaud::numericToRate(baudRate));
@@ -881,7 +878,7 @@ void display() {
 				double b = 0.7;
 				double c = 0.5;
 
-
+				//uncomment to have rotation around the center of mass
 				Eigen::MatrixXd P(8, 3);
 				/*P << a, b, c,
 					a, b, -c,

@@ -73,14 +73,12 @@ mekf::mekf(string s) {
 	std::cout << "Number of samples: " << number_of_lines << endl;
 	infile_for_numbering.close();
 
-//	processDataFile();
 
 };
 
 
 void mekf::calibrationOnline()
 {
-	//std::cout << q.coeffs() << std::endl;
 
 	// Calibration
 	if(iCalibration == 0)
@@ -88,16 +86,9 @@ void mekf::calibrationOnline()
 
 	// Accelerometer
 
-
-
 	double aux_magnitude;
 	double delta_magnitude;
 	
-
-	// Display message until key is pressed. 
-	//while (!kbhit()  && getch() == 'c')	{
-
-	//for (int i = 0; i<number_of_lines; i++) {
 		// Accelerometer
 		aux_magnitude = raw_data.accelerometer.norm();
 		delta_magnitude = aux_magnitude - accelerometer_magnitude;
@@ -106,11 +97,13 @@ void mekf::calibrationOnline()
 		mean_accelerometer += delta_accelerometer_variance / (iCalibration + 1);
 		M2_accelerometer_variance += delta_accelerometer_variance.cwiseProduct(raw_data.accelerometer - mean_accelerometer);
 		accelerometer_variance = M2_accelerometer_variance / iCalibration;
+
 		// Gyroscope
 		delta_gyroscope_variace = raw_data.gyroscope - gyroscope_bias;
 		gyroscope_bias += delta_gyroscope_variace / (iCalibration + 1);
 		M2_gyroscope_variance += delta_gyroscope_variace.cwiseProduct(raw_data.gyroscope - gyroscope_bias);
 		gyroscope_variance = M2_gyroscope_variance / iCalibration;
+
 		// Gyroscope bias drift variance
 		if (iCalibration>0) {
 			diff_measure = raw_data.gyroscope - raw_data_old.gyroscope;
@@ -121,11 +114,7 @@ void mekf::calibrationOnline()
 		}
 
 	iCalibration++;
-	//raw_data_old = raw_data;
 
-	//};
-	//std::cout << "Calibration completed" << endl;
-	// End Calibration
 }
 
 
