@@ -1,6 +1,4 @@
 # sMEKF
-## Tommaso Lisini Baldi, Francesco Farina, Antonello Giannitrapani, Andrea Garulli, and Domenico Prattichizzo
-
 
 This repository contains the paper and the source code under BY-NC-SA Creative Commons Licence.
 
