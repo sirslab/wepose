@@ -864,7 +864,7 @@ void display() {
 			//std::cout << "g_b_kalman[i] " << g_b_kalman[i] << std::endl;
 			if (g_b_kalman[i])
 			{
-				renderBitmapString(1.0, 0.5, 0.5, (void *)font, "Align the IMU with the OpenGL reference system and the press 'r' ");
+				renderBitmapString(0.0, 0.5, 0.5, (void *)font, "Align the IMU with the OpenGL reference system and the press 'r' ");
 				renderBitmapString(1.0, 0.8, 0.5, (void *)font, "The Z axes point into the screen");
 
 				mutexQuat.lock();

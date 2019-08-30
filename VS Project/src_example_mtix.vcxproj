@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectName>WePosE</ProjectName>
+    <ProjectName>wepose</ProjectName>
     <ProjectGuid>{8BFF1125-985B-40FE-8DCE-6C7780948FF6}</ProjectGuid>
-    <RootNamespace>src_example</RootNamespace>
+    <RootNamespace>wepose</RootNamespace>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
