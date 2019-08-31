@@ -99,7 +99,7 @@ bool viconLoop = true;
 // Data to save
 bool save = false;
 bool imuQ = true;
-bool viconQ = true;
+bool viconQ = false;
 
 
 //Functions
@@ -119,12 +119,19 @@ int avviaTutto() {
 	DeviceClass* deviceArray;
 	double** viconQuaternion = NULL;
 
-	std::cout << "Select the visualization modality (0: blocks; 1: Stickman)" << std::endl;
+	std::cout << "Select the visualization modality (0: blocks; 1: Stickman): "; // << std::endl;
 	int visualMode = 0;
 	std::cin >> visualMode;
 	rectangles = !visualMode;
 	g_b_3DStickman = visualMode;
 
+	std::cout << "Do you want to save the output quaternion? (y/N):  "; // << std::endl;
+	char answ;
+	std::cin >> answ;
+	//std::wcout << "..... " << answ;
+	if (answ == 'y')
+		save = true;
+	std::cout << "save: " << save;
 
 
 
@@ -143,7 +150,7 @@ int avviaTutto() {
 			int baudRate;
 			std::cout << "No USB Motion Tracker automatically found." << std::endl;
 
-			std::cout << "Please enter number of devices: " << std::endl;
+			std::cout << "Please enter number of devices: ";
 			std::cin >> numImu;
 
 			for (int iDev = 0; iDev < numImu; iDev++)
@@ -817,7 +824,7 @@ void readIMU(DeviceClass* device, XsPortInfo* mtPort, int numDev, double* viconQ
 
 	if (save) {
 		if (numDev == numImu - 1)
-			logger->saveLog("prova.txt");
+			logger->saveLog("output.txt");
 		std::cout << "File Saved!!!!" << std::endl;
 	}
 
