@@ -44,7 +44,6 @@
 
 // Visualization options
 bool rectangles = true;
-bool g_b_2DStickman = false;
 bool g_b_3DStickman = false;
 
 
@@ -155,7 +154,7 @@ int avviaTutto() {
 
 			for (int iDev = 0; iDev < numImu; iDev++)
 			{
-				std::cout << "---- DEVICE " << iDev << " ----" << std::endl;
+				std::cout << "\n ---- insert  parameters for Device " << iDev << " ----" << std::endl;
 #ifdef WIN32
 				std::cout << "Please enter COM port name (eg. COM1): "; // << std::endl;
 #else
@@ -165,11 +164,8 @@ int avviaTutto() {
 				string porteCom[3];
 
 
-				std::cout << portName << std::endl;
-
 				std::cout << "Please enter baud rate (eg. 115200.). HR works only with 2000000: ";
 				std::cin >> baudRate;
-				std::cout << baudRate << std::endl;;
 
 				XsPortInfo portInfo(portName, XsBaud::numericToRate(baudRate));
 				portInfoArray.push_back(portInfo);
@@ -226,7 +222,7 @@ int avviaTutto() {
 
 			for (int i = 0; i < numImu; i++)
 			{
-				viconQuaternion[i] = new double[7];
+				viconQuaternion[i] = new double[7]; // rotation (quaternion 4 values) and position (vector 3 values)
 
 				//simulo il Vicon
 				for (int j = 0; j < 7; j++)
@@ -420,7 +416,9 @@ int avviaTutto() {
 
 	std::cout << "Successful exit." << std::endl;
 
+	
 	std::cout << "Press [ENTER] to continue." << std::endl; //std::cin.get();
+
 
 	return 0;
 
@@ -872,7 +870,7 @@ void display() {
 			if (g_b_kalman[i])
 			{
 				renderBitmapString(0.0, 0.5, 0.5, (void *)font, "Align the IMU with the OpenGL reference system and the press 'r' ");
-				renderBitmapString(1.0, 0.8, 0.5, (void *)font, "The Z axes point into the screen");
+				renderBitmapString(0.0, 0.8, 0.5, (void *)font, "The Z axes point into the screen");
 
 				mutexQuat.lock();
 				cQuaternion.w() = qCubo[i][0];
@@ -885,10 +883,10 @@ void display() {
 				double b = 0.7;
 				double c = 0.5;
 
-				//uncomment to have rotation around the center of mass
 				Eigen::MatrixXd P(8, 3);
 
-				if (numImu == 1) {
+				//rotation around the center of mass
+				if (numImu == 1) { 
 					P << a, b, c,
 						a, b, -c,
 						a, -b, -c,
@@ -1008,7 +1006,7 @@ void display() {
 			}
 			else
 				//if (i == 0)
-					renderBitmapString(0.0, 0.0, 0.5, (void *)font, "Click here and then press 'c' to end the calibration");
+					renderBitmapString(-0.5, -0.5, 0.5, (void *)font, "Click here and then press 'c' to end the calibration");
 
 		}
 
@@ -1016,64 +1014,6 @@ void display() {
 
 		//render();
 
-	}
-	else if (g_b_2DStickman) {
-
-
-
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-		glMatrixMode(GL_MODELVIEW);     // To operate on model-view matrix
-
-		glLoadIdentity();                 // Reset the model-view matrix
-										  //glTranslatef(0.0f, 0.0f, 7.0f);  // Move right and into the screen
-		float y_offsest = 2;
-
-		glScalef(0.2f, 0.2f, 0.2f);
-
-		glColor3f(0.87, 0.87, 0.87);
-
-		drawFilledCircle(0.0, 0.0 + y_offsest, 1.0); // head
-		draw_rect(-1.0, 1.0, -4.0 + y_offsest, -1.0 + y_offsest); //body
-		//glutSolidSphere(3, 3, 3);
-
-
-
-		glColor3f(0.0, 0.0, 1.0);  // braccio
-		draw_rect(-1.7, -1.05, -3.0 + y_offsest, -1.0 + y_offsest);
-		glColor3f(0.87, 0.87, 0.87);
-
-		draw_rect(1.7, 1.05, -3.0 + y_offsest, -1.0 + y_offsest);
-
-
-
-		glColor3f(1.0, 0.5, 0.0); //avambraccio
-		draw_rect(-1.7, -1.05, -4.5 + y_offsest, -3.05 + y_offsest);
-		glColor3f(0.87, 0.87, 0.87);
-
-		draw_rect(1.7, 1.05, -4.5 + y_offsest, -3.05 + y_offsest);
-
-		//		glColor3f(0.5, 0.5, 0.4); //gambe
-		glColor3f(0.87, 0.87, 0.87);
-
-		draw_rect(-0.8, -0.1, -6.0 + y_offsest, -4.05 + y_offsest);
-		draw_rect(0.8, 0.1, -6.0 + y_offsest, -4.05 + y_offsest);
-
-
-		glColor3f(1.0, 0.0, 0.0); //joint
-		drawFilledCircle(-1.35, -3.0 + y_offsest, 0.1);
-		drawFilledCircle(1.35, -3.0 + y_offsest, 0.1);
-
-		drawFilledCircle(-1.0, -1.0 + y_offsest, 0.1);
-		drawFilledCircle(1.0, -1.0 + y_offsest, 0.1);
-
-
-
-
-
-		glLoadIdentity();
-		glutSolidSphere(5.0, 1.0, 2.0);
-
-		glFlush();
 	}
 
 	else if (g_b_3DStickman) {
