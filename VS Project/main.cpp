@@ -869,8 +869,12 @@ void display() {
 			//std::cout << "g_b_kalman[i] " << g_b_kalman[i] << std::endl;
 			if (g_b_kalman[i])
 			{
-				renderBitmapString(0.0, 0.5, 0.5, (void *)font, "Align the IMU with the OpenGL reference system and the press 'r' ");
-				renderBitmapString(0.0, 0.8, 0.5, (void *)font, "The Z axes point into the screen");
+				glColor3f(1.0, 1.0, 1.0);
+
+				renderBitmapString(-3.0, 4.0, 0.5, (void *)font, "Align the IMU with the OpenGL reference system and the press 'r' ");
+				renderBitmapString(-3.0, 3.8, 0.5, (void *)font, "The Z axes point into the screen");
+				renderBitmapString(-3.0, 3.4, 0.5, (void *)font, "press [ESC] to exit");
+
 
 				mutexQuat.lock();
 				cQuaternion.w() = qCubo[i][0];
