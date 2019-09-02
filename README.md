@@ -26,3 +26,5 @@ Estimating the limbs pose in a wearable way may beneﬁt multiple areas such as 
 2. Check the COM port and the 
 3. Open the Visual Studio Solution and check the included and linked folders
 4. Compile
+
+#### Other devices
