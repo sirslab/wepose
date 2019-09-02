@@ -17,7 +17,7 @@ Estimating the limbs pose in a wearable way may beneﬁt multiple areas such as 
 ### Binary execution
 
 1. Install the Xsens Driver
-2. Check the COM port and the 
+2. Check the COM port and the baudrate
 
 ### From source
 
