@@ -12,7 +12,7 @@ Estimating the limbs pose in a wearable way may beneﬁt multiple areas such as 
    Title = {{Upper Body Pose Estimation Using Wearable Inertial Sensors and Multiplicative Kalman Filter}},
    Journal = {IEEE Sensors Journal},
    Year = {2019},
-   doi = 		{https://doi.org/10.1109/JSEN.2019.2940612},
+   doi = {https://doi.org/10.1109/JSEN.2019.2940612},
 }
 ```
 
