@@ -1,6 +1,6 @@
 ang_magnitude=1; %1000
-init=10
-stop=100
+init=100
+stop=1000
 
 %%%%
 imu=1;
