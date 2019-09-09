@@ -368,8 +368,6 @@ int avviaTutto() {
 			g_b_startGUI = true;
 
 
-			//_getch();
-			//std::cout << "\n" << std::string(79, '-') << "\n";
 			std::cout << std::endl;
 			for (int i = 0; i < numImu; i++)
 			{
