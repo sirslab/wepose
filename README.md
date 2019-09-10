@@ -9,7 +9,7 @@ may benefit multiple areas such as rehabilitation, teleoperation, human-robot in
 ## Citation
 ```latex
 @article{lisiniFarina2019,
-   Author = {Lisini Baldi, T. and Farina, F. and Garulli, A. and Giannitrapani, A, and Prattichizzo, P.},
+   Author = {Lisini Baldi, T. and Farina, F. and Garulli, A. and Giannitrapani, A, and Prattichizzo, D.},
    Title = {{Upper Body Pose Estimation Using Wearable Inertial Sensors and Multiplicative Kalman Filter}},
    Journal = {IEEE Sensors Journal},
    Year = {2019},
