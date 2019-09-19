@@ -44,5 +44,5 @@ function [acc_magnitude,ang_magnitude, acc_bias, gyro_bias, Sigma_acc, Sigma_acc
     Sigma_gyr=diag(var(ang_data(1:T,:)));
     Sigma_gyr_bias=diag(var(diff(ang_data(1:T,:))));
 
-    save biasAndVariances.mat acc_magnitude ang_magnitude acc_bias gyro_bias Sigma_acc Sigma_acc_bias Sigma_gyr Sigma_gyr_bias Sigma_mag Sigma_mag_bias
+  
 end

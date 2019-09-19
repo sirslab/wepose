@@ -9,8 +9,6 @@ imu=1;
 % calculate the calibrationparameters
 [acc_magnitude,ang_magnitude, acc_bias, gyro_bias, Sigma_acc, Sigma_acc_bias, Sigma_gyr, Sigma_gyr_bias, Sigma_mag, Sigma_mag_bias]=biasAndVariances_vicon(imu,init,stop,raw_matrix,ang_magnitude);
 
-load biasAndVariances.mat
-
 % axis selection
 x=1;
 y=2;
