@@ -1,6 +1,6 @@
 ang_magnitude=1; %1000
-init=100
-stop=1000
+init=100;
+stop=1000;
 
 %%%%
 imu=1;
@@ -40,20 +40,6 @@ ang_data=ang_data-(gyro_bias'*ones(1,T))';
 %acc_data=acc_data-(acc_bias'*ones(1,T))';
 
 
-
-% mag_data=mag_data-ones(HalfTime,1)*[Vx Vy Vz];
-
-% for i=1:TotalTime
-%     if mod(i+1,2)==0 && i<2*HalfTime
-%         mag_dataT(i,:)=mag_data((i+1)/2,:);
-%     elseif i<2*HalfTime
-%         mag_dataT(i,:)=(mag_data((i+1)/2-0.5,:)+mag_data((i+1)/2+0.5,:))/2;
-%     else
-%         mag_dataT(i,:)=mag_data(end,:);
-%     end
-% end
-
-
 % %%%%%%%%%%%% Attitude from magnetometer and accelerometer %%%%%%%%%%%%%%%%%
 %%% pitch angle (roll)
 phi=atan2(acc_data(:,2),acc_data(:,3));
@@ -67,12 +53,7 @@ for i=1:T
     QCompassAcc(:,i)=M2q(RCompassAcc(:,:,i));
 end
 QCompassAcc=QCompassAcc([1 2 3 4],:);
-% QCompassAcc = quatmultiply(quatconj(QCompassAcc(:,10)'),QCompassAcc');
-%plot(QCompassAcc');
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%
 
-%%
 
 % state dimension
 S=6;
@@ -130,7 +111,7 @@ for t=1:T-1
     G=dt*[-eye(3) zeros(3)
         zeros(3) eye(3)];
     P_now=squeeze(P(:,:,t));
-%    keyboard()
+
     if pred_on==1
         P_pred=F*P_now*F'+G*Q*G';
     else
@@ -183,40 +164,6 @@ for t=1:T-1
         else
             pred_on=1;
         end
-    end
-    % correction step (when stationary) ACCELEROMETRO & MAGNETOMETRO
-    if t+N<T && 0
-        x_pred=x(t+1,:);
-        q_now=q(t+1,:);
-        P_pred =P(:,:,t+1);
-        
-        cA=var(acc_data(t:t+N,:))<=diag(Sigma_acc)';
-        CA=abs(norm(mean(acc_data(t:t+N,:)))-norm(acc_ref))<0.01;
-        CAA=var(sqrt(sum(acc_data(t:t+N,:).^2,2))-ones(N+1,1))<=0.01;
-        cG=var(ang_data(t:t+N,:))<=2*diag(Sigma_gyr)';
-        CAAA=abs(norm(acc_data(t,:))-1)<=0.01;
-        
-        if all(cA) && all(CA) && all(CAA) && all(cG) && CAAA
-            
-            c=c+1;
-            pred_on=0;
-            
-            y=[acc_data(t,:) mag_data(t,:)]';
-            vB=[q2rotm(q_now)'*acc_ref'; q2rotm(q_now)'*mag_ref'];
-            Hag=SkewMat(vB(1:3));
-            Ham=SkewMat(vB(4:6));
-            H=[ Hag zeros(3)
-                Ham zeros(3) ];
-            K=P_pred*H'*inv(H*P_pred*H'+R);
-            x(t+1,:)=x_pred'+K*(y-vB);
-            P(:,:,t+1)=P_pred*(eye(S)-H'*K');
-            
-            a=x(t+1,1:3);
-            dq=[cos(norm(a)/2) a/norm(a)*sin(norm(a)/2)];
-            q(t+1,:)=qmul(q(t+1,:),dq);
-        else
-            pred_on=1;
-        end
-    end
+    end   
 end
 

@@ -25,8 +25,6 @@ raw_matrix(1,10,:) = time;
 
 dt_ = round(mean(diff(raw_matrix(1,10,:))));
 
-%%lanci l'algoritmo
 MEKF
 
-angoli = quat2eul(q, 'XYZ');
-plot(angoli*180/pi);
+plot(q);
