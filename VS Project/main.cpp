@@ -113,7 +113,7 @@ std::thread readViconThread; // thread to read Vicon stream
 int valuesToSave = 9; // all values -> 136;
 
 
-int avviaTutto() {
+int mainthread() {
 
 	DeviceClass* deviceArray;
 	double** viconQuaternion = NULL;
@@ -432,9 +432,9 @@ int main(int argc, char* argv[])
 #ifdef GUI
 
 	// start imu's thread (main thread for data orientation estimation)
-	std::thread avviaTuttoThread;
+	std::thread mainthread_Trd;
 
-	avviaTuttoThread = std::thread(avviaTutto);
+	mainthread_Trd = std::thread(mainthread);
 
 	//  Inizializzare il GLUT e processare i parametri degli utenti
 	glutInit(&argc, argv);
@@ -474,7 +474,7 @@ int main(int argc, char* argv[])
 
 
 	//wait for master thread :-O
-	avviaTuttoThread.join();
+	mainthread_Trd.join();
 
 #else
 	avviaTutto(); // no GUI
