@@ -127,7 +127,7 @@ int mainthread() {
 	std::cout << "Do you want to save the output quaternion? (y/N):  "; // << std::endl;
 	char answ;
 	std::cin >> answ;
-	//std::wcout << "..... " << answ;
+
 	if (answ == 'y')
 		save = true;
 	std::cout << "save: " << save;
@@ -201,38 +201,10 @@ int mainthread() {
 
 		if (save)
 		{
-			//logger = new SaveData[numImu];
-			//for (int i = 0; i < numImu; i++)
-			//{
-				//logger[i] = SaveData(numImu, valuesToSave, imuQ, viconQ);
-			//}
 			logger = new SaveData(numImu, valuesToSave, imuQ, viconQ);
-
 		}
-
-
 
 		std::cout << std::endl;
-
-
-		if (vicon) {
-
-			viconQuaternion = new double*[numImu];
-			readViconThread = std::thread(readVicon, viconQuaternion, numImu, &viconLoop);
-
-			for (int i = 0; i < numImu; i++)
-			{
-				viconQuaternion[i] = new double[7]; // rotation (quaternion 4 values) and position (vector 3 values)
-
-				//simulo il Vicon
-				for (int j = 0; j < 7; j++)
-				{
-					viconQuaternion[i][j] = 0; // j;
-
-				}
-
-			}
-		}
 
 
 		// Use the first detected device
@@ -767,23 +739,14 @@ void readIMU(DeviceClass* device, XsPortInfo* mtPort, int numDev, double* viconQ
 
 				if (save)
 				{
-					//void SaveData::setValues(int i, double* val, double*imuQuat, uint32_t tstamp)
-					//std::cout << "viconQuat: " << viconQuat[0] << " " << viconQuat[1] << " " << viconQuat[2] << " " << viconQuat[3] << std::endl;
-					if (imuQ && viconQ)
-					{
-						logger->setValues(numDev, rawValues, imuQuat, viconQuat, timestamp); // per ora il q IMU è simualto da qvicon
-					}
-					else if (imuQ && !viconQ)
+					if (imuQ && !viconQ)
 					{
 						mutexSave.lock();
 						logger->setValues(numDev, rawValues, imuQuat, timestamp);
 						mutexSave.unlock();
 
 					}
-					else if (!imuQ && viconQ)
-					{
-						logger->setValues(numDev, rawValues, imuQuat, timestamp);
-					}
+
 					else
 					{
 						logger->setValues(numDev, rawValues, timestamp);
@@ -804,17 +767,11 @@ void readIMU(DeviceClass* device, XsPortInfo* mtPort, int numDev, double* viconQ
 				std::cout << "\r" << std::fixed << std::setprecision(2) << (double)(timestamp - startTime) / 10000 << " s";
 			}
 
-
-
-
-			//std::cout << std::endl;
-
 		}
 		//std::wcout << "\r";
 		std::cout << std::flush;
 
-		//msgs.clear();
-		//XsTime::msleep(0);
+
 	}
 
 
@@ -832,8 +789,6 @@ void readIMU(DeviceClass* device, XsPortInfo* mtPort, int numDev, double* viconQ
 	}
 	std::cout << "Done! " << std::endl;
 
-
-	//std::cout << "Thread of Device: " << device->getDeviceId().toString() << " closed" <<std::endl;
 }
 
 
