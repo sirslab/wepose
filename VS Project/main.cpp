@@ -789,8 +789,6 @@ void readIMU(DeviceClass* device, XsPortInfo* mtPort, int numDev, double* viconQ
 	}
 	std::cout << "Done! " << std::endl;
 
-
-	//std::cout << "Thread of Device: " << device->getDeviceId().toString() << " closed" <<std::endl;
 }
 
 
