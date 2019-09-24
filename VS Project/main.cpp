@@ -832,8 +832,6 @@ void readIMU(DeviceClass* device, XsPortInfo* mtPort, int numDev, double* viconQ
 	}
 	std::cout << "Done! " << std::endl;
 
-
-	//std::cout << "Thread of Device: " << device->getDeviceId().toString() << " closed" <<std::endl;
 }
 
 
@@ -910,11 +908,18 @@ void display() {
 						0, -b, -c,
 						0, -b, c;
 				}
-				Matrix3d T;
-				//T.setIdentity();
-				
+				Matrix3d T;		
+				Matrix3d Rotx90, Roty90, Rotz90;
 
-				
+				Rotx90 << 1, 0, 0,
+					0, 0, -1,
+					0, 1, 0;
+
+				Roty90 << 0, 0, 1,
+					0, 1, 0,
+					-1, 0, 0;
+
+
 				T = cQuaternion.toRotationMatrix();
 				allT[i] = T;
 				//std::cout << T << endl;
@@ -1238,8 +1243,6 @@ void display() {
 		glFlush();
 
 	}
-
-
 
 	glutSwapBuffers();
 
