@@ -108,7 +108,6 @@ void readIMU(DeviceClass*, XsPortInfo*, int, double*);
 
 //Threads
 std::thread* t; // each imu will have a sapate thread
-std::thread readViconThread; // thread to read Vicon stream
 
 int valuesToSave = 9; // all values -> 136;
 
@@ -192,10 +191,7 @@ int mainthread() {
 
 
 		std::cout << "Device added: " << numImu << std::endl;
-		if (vicon)
-		{
-			viconQ = true;
-		}
+
 
 		std::cout << "\n Valori salvati: ";
 
@@ -378,11 +374,6 @@ int mainthread() {
 		std::cout << "An unknown fatal error has occured. Aborting." << std::endl;
 	}
 
-	std::cout << "Exiting Vicon" << std::endl;
-
-	if (readViconThread.joinable())
-		readViconThread.join();
-	std::cout << "Vicon closed" << std::endl;
 
 	std::cout << "Successful exit." << std::endl;
 
@@ -685,48 +676,13 @@ void readIMU(DeviceClass* device, XsPortInfo* mtPort, int numDev, double* viconQ
 					kalmanFilter.getQuaternion(imuQuat);
 
 
-					/* Vector3d  a,b;
-					VectorXd x(6, 1), h(6, 1);
-					MatrixXd P(6, 6), K(6, 6), Ka(6, 6);
-
-					kalmanFilter.get_a(&a);
-					kalmanFilter.get_vb(&b);
-					kalmanFilter.get_x(&x);
-					kalmanFilter.get_h(&h);
-					kalmanFilter.get_P(&P);
-					kalmanFilter.get_K(&K);
-					kalmanFilter.get_K_aux(&Ka);
-
-
-					rawValues[6] = a(0);
-					rawValues[7] = a(1);
-					rawValues[8] = a(2);
-					rawValues[9] = b(0);
-					rawValues[10] = b(1);
-					rawValues[11] = b(2);
-
-					for (int k = 0; k < 6; k++)
-					{
-						rawValues[12 + k] = x(k);
-						rawValues[12 + 6 + k] =  h(k);
-
-						for (int j = 0; j < 6; j++)
-						{
-							rawValues[24 + 6 * k + j] =  P(k, j);
-							rawValues[24 + 36 + 6 * k + j] =   K(k, j);
-							rawValues[24 + 36 + 36 + 6 * k + j] =   Ka(k, j);
-
-						}
-					}
-
-					*/
+				
 
 
 					mutexQuat.lock();
 					qCubo[numDev] = imuQuat;
 					mutexQuat.unlock();
 
-					//std::cout << "q: " << imuQuat[0] << " " << imuQuat[1] << " "<<imuQuat[2] << " "<<imuQuat[3];
 
 					if (g_b_ImuReset[numDev])
 					{
@@ -908,9 +864,7 @@ void display() {
 				}
 
 
-				// Ruota quando l'utente modifica rotate_x e rotate_y
-			//	glRotatef(rotate_x, 1.0, 0.0, 0.0);
-		//		glRotatef(rotate_y, 0.0, 1.0, 0.0);
+
 
 
 				// Lato multicolore - FRONTALE
@@ -1146,23 +1100,6 @@ void display() {
 
 
 		float y_offsest = 2;
-
-
-		/*glMatrixMode(GL_MODELVIEW);
-		// clear the drawing buffer.
-		glClear(GL_COLOR_BUFFER_BIT);
-		// clear the identity matrix.
-
-
-		glLoadIdentity();
-
-		// traslate the draw by z = -4.0
-		// Note this when you decrease z like -8.0 the drawing will looks far , or smaller.
-		glScalef(0.2f, 0.2f, 0.2f);
-
-		*/
-		//glTranslatef(0.0, 0.0, -1.0);
-
 
 
 		glColor3f(1.0, 0.2, 0.2);
