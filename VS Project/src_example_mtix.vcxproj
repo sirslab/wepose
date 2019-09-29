@@ -153,6 +153,7 @@
       <ForcedIncludeFiles>xcommunicationconfig.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
       <OpenMPSupport>true</OpenMPSupport>
+      <BrowseInformation>true</BrowseInformation>
     </ClCompile>
     <Link>
       <AdditionalDependencies>setupapi.lib;ViconDataStreamSDK_CPP.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -167,6 +168,9 @@
     <PostBuildEvent>
       <Command />
     </PostBuildEvent>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Midl>
