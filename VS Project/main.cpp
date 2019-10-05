@@ -49,7 +49,6 @@ bool g_b_3DStickman = false;
 
 // Glut functions
 void display();
-void specialKeys(int key, int x, int y);
 void glutIdle(void);
 void mykey(unsigned char key, int x, int y);
 void initGL();
@@ -408,7 +407,7 @@ int main(int argc, char* argv[])
 	glutInitWindowPosition(50, 200);	// Creare la finestra
 
 	// Create window with the given title
-	glutCreateWindow("Specchio Meraviglioso");
+	glutCreateWindow("WePosE  GUI");
 
 	//Callback
 	glutKeyboardFunc(mykey);
@@ -422,7 +421,6 @@ int main(int argc, char* argv[])
 	//register idle function
 	glutIdleFunc(glutIdle);
 
-	glutSpecialFunc(specialKeys);
 	//glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
 
 	// Our own OpenGL initialization
@@ -1156,27 +1154,6 @@ void cleanExit()
 	exit(0);
 }
 
-
-void specialKeys(int key, int x, int y) {
-
-	// Freccia destra - aumenta la rotazione di 5 gradi
-	if (key == GLUT_KEY_RIGHT)
-		rotate_y += 5;
-
-	// Freccia sinistra - riduci la rotazione di 5 gradi
-	else if (key == GLUT_KEY_LEFT)
-		rotate_y -= 5;
-
-	else if (key == GLUT_KEY_UP)
-		rotate_x += 5;
-
-	else if (key == GLUT_KEY_DOWN)
-		rotate_x -= 5;
-
-	// Richiedi l'aggiornamento dell'immagine
-	glutPostRedisplay();
-
-}
 
 
 
