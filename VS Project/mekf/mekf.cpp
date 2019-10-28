@@ -17,7 +17,6 @@ mekf::mekf(bool HR) {
 	raw_data.gyroscope = { 0,0,0 };
 	raw_data.vicon = {1, 0,0,0 };
 	raw_data.timestamp = 0;
-	//raw_data_old = new acquisition;
 
 	accelerometer_magnitude = 0.0;
 	accelerometer_variance.setZero();
@@ -333,7 +332,8 @@ void mekf::setCovarianceMatrices() {
 	R.block(0, 0, 3, 3) = accelerometer_variance.asDiagonal();
 	R.block(3, 3, 3, 3) = gyroscope_variance.asDiagonal();
 
-	reference_acceleration = { 0, 0, accelerometer_magnitude };
+	reference_acceleration = { 0, 0, accelerometer_magnitude }; 
+
 
 }
 

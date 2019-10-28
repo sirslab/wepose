@@ -91,7 +91,7 @@ bool magnetometer = true;
 
 // Vicon?
 bool vicon = false;
-bool viconLoop = true;
+bool viconLoop = false;
 
 
 // Data to save
@@ -533,9 +533,14 @@ void readIMU(DeviceClass* device, XsPortInfo* mtPort, int numDev, double* viconQ
 				//	*/
 					for (int i = 0; i < 3; i++)
 					{
-						rawValues[i] = angvel[i];// *M_PI / 180;
+						rawValues[i] = angvel[i];
 						//rawValues[i] = counter+i;// *M_PI / 180;
 					}
+
+			//		rawValues[0] = angvel[0];
+			//		rawValues[2] = angvel[1];
+			//		rawValues[1] = angvel[2];
+
 					readGyr = true;
 					counter++;
 				}
@@ -560,6 +565,11 @@ void readIMU(DeviceClass* device, XsPortInfo* mtPort, int numDev, double* viconQ
 					{
 						rawValues[i] = accvel[i - 3];
 					}
+
+
+				//	rawValues[3] = accvel[0];
+				//	rawValues[5] = accvel[1];
+				//	rawValues[4] = accvel[2];
 					readAcc = true;
 				}
 
