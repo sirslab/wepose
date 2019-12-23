@@ -1,15 +1,16 @@
-ang_magnitude=1; %1000
+ang_magnitude=1; 
+
+%Calibration Samples
 init=100;
 stop=1000;
 
-%%%%
+%% Number of IMUs
 imu=1;
-%%%%%
 
-% calculate the calibrationparameters
+%% calculate the calibration parameters
 [acc_magnitude,ang_magnitude, acc_bias, gyro_bias, Sigma_acc, Sigma_acc_bias, Sigma_gyr, Sigma_gyr_bias, Sigma_mag, Sigma_mag_bias]=biasAndVariances_vicon(imu,init,stop,raw_matrix,ang_magnitude);
 
-% axis selection
+%% axis selection
 x=1;
 y=2;
 z=3;
@@ -19,11 +20,11 @@ acc_data=squeeze(raw_matrix(imu,[x y z],1:end))';
 ang_data=squeeze(raw_matrix(imu,3+[x y z],1:end))';
 mag_data=squeeze(raw_matrix(imu,6+[x y z],1:end))';
 
+%% Use magnitude if the output is m/s^2
 
 acc_data=acc_data;%./acc_magnitude;
 ang_data=ang_data./ang_magnitude;
 %ang_data=deg2rad(ang_data);
-
 
 
 % Sym time
@@ -32,13 +33,12 @@ T=min_dim(1);
 
 %% Magnetometer calibration
 
-
 % bias correction
 ang_data=ang_data-(gyro_bias'*ones(1,T))';
-%acc_data=acc_data-(acc_bias'*ones(1,T))';
 
 
-% %%%%%%%%%%%% Attitude from magnetometer and accelerometer %%%%%%%%%%%%%%%%%
+
+%% %%%%%%%%%%% Attitude from magnetometer and accelerometer %%%%%%%%%%%%%%%%%
 %%% pitch angle (roll)
 phi=atan2(acc_data(:,2),acc_data(:,3));
 %%% roll angle (pitch)
@@ -69,7 +69,7 @@ e1 = 0.001;
 P0=[e1*eye(3) zeros(3)
     zeros(3) e1*eye(3)];
 
-q0 = [1 0 0 0];
+q0 = q_initial;% [1 0 0 0];
 q=zeros(T,4);
 q(1,:)=q0;
 
@@ -90,17 +90,15 @@ c=1;
 pred_on=1;
 
 interTimes=diff(squeeze(raw_matrix(imu,10,:)));%./10^6;
-%interTimes=(squeeze(raw_matrix(imu,10,:)))./10^3;
 a_all = [0 0 0]; 
 vb_all = [0 0 0];
 h_all = [0 0 0 0 0 0];
 x_all = [0 0 0 0 0 0];
 
 
-% MEKF
+%% MEKF
 for t=1:T-1
-    dt=interTimes(t)/10000;
-    %dt = 0.01;
+    dt=interTimes(t)/10000; %time in seconds
     q_now=q(t,:);
     x_pred=[0 0 0 x(t,4:end)];
     omega=ang_data(t,:)-x_pred(4:6);
@@ -121,7 +119,7 @@ for t=1:T-1
     om_t=[cos((norm(omega)*dt)/2) omega/norm(omega)*sin((norm(omega)*dt)/2)]';
     q(t+1,:)=qmul(q(t,:),om_t');
     
-    %     % correction step (when stationary) ACC & GYRO
+    % correction step (when stationary) ACC & GYRO
     if t>N && 0
         x_pred=x(t+1,:);
         q_now=q(t+1,:);
