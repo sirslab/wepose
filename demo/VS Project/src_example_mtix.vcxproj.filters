@@ -1,0 +1,551 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\XsensDeviceAPI">
+      <UniqueIdentifier>{f430dc83-5ad5-42bf-a0fc-1180e0779816}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\XsTypes">
+      <UniqueIdentifier>{74dbe66b-3e11-4fe4-b428-bca3be668c80}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files\XsTypes">
+      <UniqueIdentifier>{cbf4d655-1312-4b41-8453-b6749cda11c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\XsensDeviceAPI">
+      <UniqueIdentifier>{0877ef4e-7cf5-4510-b28d-36059bf48109}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="deviceclass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xstypes\xsutctime.c">
+      <Filter>Source Files\XsTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="xstypes\xsvector.c">
+      <Filter>Source Files\XsTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="xstypes\xsvector3.c">
+      <Filter>Source Files\XsTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="xstypes\xsversion.c">
+      <Filter>Source Files\XsTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="xstypes\xsarray.c">
+      <Filter>Source Files\XsTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="xstypes\xsbaud.c">
+      <Filter>Source Files\XsTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="xstypes\xsbytearray.c">
+      <Filter>Source Files\XsTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="xstypes\xscalibrateddata.c">
+      <Filter>Source Files\XsTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="xstypes\xsdeviceid.c">
+      <Filter>Source Files\XsTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="xstypes\xsdeviceidarray.c">
+      <Filter>Source Files\XsTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="xstypes\xseuler.c">
+      <Filter>Source Files\XsTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="xstypes\xsfile.c">
+      <Filter>Source Files\XsTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="xstypes\xsgpspvtdata.c">
+      <Filter>Source Files\XsTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="xstypes\xsint64array.c">
+      <Filter>Source Files\XsTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="xstypes\xsintarray.c">
+      <Filter>Source Files\XsTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="xstypes\xslibraryloader.c">
+      <Filter>Source Files\XsTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="xstypes\xsmalloc.c">
+      <Filter>Source Files\XsTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="xstypes\xsmath.c">
+      <Filter>Source Files\XsTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="xstypes\xsmatrix.c">
+      <Filter>Source Files\XsTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="xstypes\xsmatrix3x3.c">
+      <Filter>Source Files\XsTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="xstypes\xsmessage.c">
+      <Filter>Source Files\XsTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="xstypes\xsmessagearray.c">
+      <Filter>Source Files\XsTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="xstypes\xsoutputconfiguration.c">
+      <Filter>Source Files\XsTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="xstypes\xsoutputconfigurationarray.c">
+      <Filter>Source Files\XsTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="xstypes\xsportinfo.c">
+      <Filter>Source Files\XsTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="xstypes\xsportinfoarray.c">
+      <Filter>Source Files\XsTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="xstypes\xsquaternion.c">
+      <Filter>Source Files\XsTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="xstypes\xsrange.c">
+      <Filter>Source Files\XsTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="xstypes\xsresultvalue.c">
+      <Filter>Source Files\XsTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="xstypes\xsrssi.c">
+      <Filter>Source Files\XsTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="xstypes\xssdidata.c">
+      <Filter>Source Files\XsTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="xstypes\xssimpleversion.c">
+      <Filter>Source Files\XsTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="xstypes\xssocket.c">
+      <Filter>Source Files\XsTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="xstypes\xsstring.c">
+      <Filter>Source Files\XsTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="xstypes\xsstringarray.c">
+      <Filter>Source Files\XsTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="xstypes\xssyncsetting.c">
+      <Filter>Source Files\XsTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="xstypes\xssyncsettingarray.c">
+      <Filter>Source Files\XsTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="xstypes\xsthread.c">
+      <Filter>Source Files\XsTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="xstypes\xstime.c">
+      <Filter>Source Files\XsTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="xstypes\xstimestamp.c">
+      <Filter>Source Files\XsTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="xstypes\xstriggerindicationdata.c">
+      <Filter>Source Files\XsTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="xstypes\xstypedefs.c">
+      <Filter>Source Files\XsTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="xcommunication\legacydatapacket.cpp">
+      <Filter>Source Files\XsensDeviceAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="xcommunication\mtwsdidata.cpp">
+      <Filter>Source Files\XsensDeviceAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="xcommunication\packetfixeddata.cpp">
+      <Filter>Source Files\XsensDeviceAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="xcommunication\packetstamper.cpp">
+      <Filter>Source Files\XsensDeviceAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="xcommunication\protocolhandler.cpp">
+      <Filter>Source Files\XsensDeviceAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="xcommunication\serialinterface.cpp">
+      <Filter>Source Files\XsensDeviceAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="xcommunication\synclinemk4.c">
+      <Filter>Source Files\XsensDeviceAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="xcommunication\usbinterface.cpp">
+      <Filter>Source Files\XsensDeviceAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="xcommunication\xswinusb.cpp">
+      <Filter>Source Files\XsensDeviceAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="xcommunication\enumerateusbdevices.cpp">
+      <Filter>Source Files\XsensDeviceAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="xcommunication\int_xsdatapacket.cpp">
+      <Filter>Source Files\XsensDeviceAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="xcommunication\iointerface.cpp">
+      <Filter>Source Files\XsensDeviceAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="xcommunication\iointerfacefile.cpp">
+      <Filter>Source Files\XsensDeviceAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="xstypes\xsdatapacket.cpp">
+      <Filter>Source Files\XsTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="xstypes\datapacket_p.cpp">
+      <Filter>Source Files\XsTypes</Filter>
+    </ClCompile>
+    <ClCompile Include="saveData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vicon\ViconDataStream.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mekf\mekf.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="deviceclass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xssyncsettinglist.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsthread.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xstime.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xstimestamp.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xstriggerindicationdata.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xstypedefs.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xstypesconfig.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsushortvector.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsutctime.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsvector.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsvector3.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsversion.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsxbusmessageid.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\pstdint.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\resource.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsanalogindata.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsarray.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsatomicint.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsbaud.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsbaudcode.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsbaudrate.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsbusid.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsbytearray.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xscalibrateddata.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xscontrolline.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xscopy.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsdataformat.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsdataidentifier.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsdatapacket.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsdebugcounters.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsdeviceid.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsdeviceidarray.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsdeviceidlist.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsdid.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xseuler.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsexception.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsfile.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsfilepos.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsgpspvtdata.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsinforequest.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsint64array.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsintarray.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsintlist.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xslibraryloader.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsmalloc.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsmath.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsmatrix.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsmatrix3x3.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsmessage.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsmessagearray.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsmessagelist.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsmutex.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsoutputconfiguration.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsoutputconfigurationarray.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsoutputconfigurationlist.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsoutputmode.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsoutputsettings.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsplatform.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsportinfo.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsportinfoarray.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsportinfolist.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xspressure.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsquaternion.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsrange.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsrawgnsspvtdata.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsrawgnsssatinfo.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsrawgpsdop.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsrawgpssol.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsrawgpssvinfo.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsrawgpstimeutc.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsresultvalue.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsrssi.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsscrdata.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xssdidata.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xssimpleversion.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xssocket.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsstring.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsstringarray.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xsstringstreaming.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xssyncfunction.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xssyncline.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xssyncpolarity.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xssyncrole.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xssyncsetting.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xsens\xssyncsettingarray.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xcommunication\streaminterface.h">
+      <Filter>Header Files\XsensDeviceAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xcommunication\synclinemk4.h">
+      <Filter>Header Files\XsensDeviceAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xcommunication\usbinterface.h">
+      <Filter>Header Files\XsensDeviceAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xcommunication\xcommunicationconfig.h">
+      <Filter>Header Files\XsensDeviceAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xcommunication\xswinusb.h">
+      <Filter>Header Files\XsensDeviceAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xcommunication\enumerateusbdevices.h">
+      <Filter>Header Files\XsensDeviceAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xcommunication\int_xsdatapacket.h">
+      <Filter>Header Files\XsensDeviceAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xcommunication\iointerface.h">
+      <Filter>Header Files\XsensDeviceAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xcommunication\iointerfacefile.h">
+      <Filter>Header Files\XsensDeviceAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xcommunication\iprotocolhandler.h">
+      <Filter>Header Files\XsensDeviceAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xcommunication\legacydatapacket.h">
+      <Filter>Header Files\XsensDeviceAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xcommunication\messagelocation.h">
+      <Filter>Header Files\XsensDeviceAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xcommunication\mtwsdidata.h">
+      <Filter>Header Files\XsensDeviceAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xcommunication\packetfixeddata.h">
+      <Filter>Header Files\XsensDeviceAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xcommunication\packetstamper.h">
+      <Filter>Header Files\XsensDeviceAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xcommunication\protocolhandler.h">
+      <Filter>Header Files\XsensDeviceAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\xcommunication\serialinterface.h">
+      <Filter>Header Files\XsensDeviceAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="xstypes\datapacket_p.h">
+      <Filter>Header Files\XsTypes</Filter>
+    </ClInclude>
+    <ClInclude Include="saveData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DataStreamClient.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mekf\mekf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="glUtils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stickman\stickman.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="vicon\ViconDataStreamSDK_CPP.lib">
+      <Filter>Resource Files</Filter>
+    </Library>
+  </ItemGroup>
+</Project>
