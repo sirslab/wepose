@@ -41,7 +41,7 @@ may benefit multiple areas such as rehabilitation, teleoperation, human-robot in
 #### Usage
 1. Compile cpp/mekf/example.cpp
 
-##Demo
+## Demo
 ### Requirements
 * XSens device (one or more)
 * Windows 7, 8, 8.1, 10
