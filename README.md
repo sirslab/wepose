@@ -54,7 +54,6 @@ may benefit multiple areas such as rehabilitation, teleoperation, human-robot in
 
 ### From source
 
-#### Xsens Device
 1. Install Xsens Driver
 2. Check the COM port and the 
 3. Open the Visual Studio Solution and check the included and linked folders
