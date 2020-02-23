@@ -17,17 +17,40 @@ may benefit multiple areas such as rehabilitation, teleoperation, human-robot in
 }
 ```
 
-## Requirements
-### Software
-* Windows
+
 
 ## Installation and Usage
+
+## MATLAB
+### Requirements
+* MATLAB 2014 or later
+
+### Usage
+1. Run mekf.m from .\matlab\
+
+## CPP library
+### Windows
+#### Requirements
+* Windows
+* Visual Studio 2017
+#### Usage
+1. Open mekf.sln from .\cpp\
+2. Build the project in release mode
+
+### Unix
+#### Usage
+1. Compile cpp/mekf/example.cpp
+
+##Demo
+### Requirements
+* XSens device (one or more)
+* Windows 7, 8, 8.1, 10
 
 ### Binary execution
 
 1. Install the Xsens Driver
 2. Check the COM port and the baudrate
-3. Run the .exe file
+3. Run demo/bin/Win32/wepose.exe
 
 ### From source
 
@@ -35,9 +58,6 @@ may benefit multiple areas such as rehabilitation, teleoperation, human-robot in
 1. Install Xsens Driver
 2. Check the COM port and the 
 3. Open the Visual Studio Solution and check the included and linked folders
-4. Compile
+4. Build the project in release mode
 
-#### Other devices
 
-### MATLAB
-1- Run the wepose.m file
